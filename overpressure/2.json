@@ -1,0 +1,97 @@
+[
+    {
+      "distance": "0.24",
+      "value": "0.02",
+      "id": "1"
+    },
+    {
+      "distance": "0.3",
+      "value": "0.02",
+      "id": "1"
+    },
+    {
+      "distance": "0.4",
+      "value": "0.02",
+      "id": "1"
+    },
+    {
+      "distance": "0.5",
+      "value": "0.02",
+      "id": "1"
+    },
+    {
+      "distance": "0.6",
+      "value": "0.018",
+      "id": "1"
+    },
+    {
+      "distance": "0.7",
+      "value": "0.0165",
+      "id": "1"
+    },
+    {
+      "distance": "0.8",
+      "value": "0.0145",
+      "id": "1"
+    },
+    {
+      "distance": "0.9",
+      "value": "0.0125",
+      "id": "1"
+    },
+    {
+      "distance": "1",
+      "value": "0.011",
+      "id": "1"
+    },
+    {
+      "distance": "2",
+      "value": "0.0055",
+      "id": "1"
+    },
+    {
+      "distance": "3",
+      "value": "0.0035",
+      "id": "1"
+    },
+    {
+      "distance": "4",
+      "value": "0.00275",
+      "id": "1"
+    },
+    {
+      "distance": "5",
+      "value": "0.00225",
+      "id": "1"
+    },
+    {
+      "distance": "6",
+      "value": "0.0019",
+      "id": "1"
+    },
+    {
+      "distance": "7",
+      "value": "0.0017",
+      "id": "1"
+    },
+    {
+      "distance": "8",
+      "value": "0.00155",
+      "id": "1"
+    },
+    {
+      "distance": "9",
+      "value": "0.0014",
+      "id": "1"
+    },
+    {
+      "distance": "10",
+      "value": "0.00115",
+      "id": "1"
+    },
+    {
+      "distance": "10.1",
+      "value": "0.001",
+      "id": "0"
+    }
+  ]
