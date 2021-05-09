@@ -1,0 +1,434 @@
+[
+    {
+      "probit": "2.67",
+      "percent": "1",
+    },
+    {
+      "probit": "2.95",
+      "percent": "2",
+    },
+    {
+      "probit": "3.12",
+      "percent": "3",
+    },
+    {
+      "probit": "3.25",
+      "percent": "4",
+    },
+    {
+      "probit": "3.36",
+      "percent": "5",
+    },
+    {
+      "probit": "3.45",
+      "percent": "6",
+    },
+    {
+      "probit": "3.52",
+      "percent": "7",
+    },
+    {
+      "probit": "3.59",
+      "percent": "8",
+    },
+    {
+      "probit": "3.66",
+      "percent": "9",
+    },
+    {
+      "probit": "3.72",
+      "percent": "10",
+    },
+    {
+      "probit": "3.77",
+      "percent": "11",
+    },
+    {
+      "probit": "3.82",
+      "percent": "12",
+    },
+    {
+      "probit": "3.897",
+      "percent": "13",
+    },
+    {
+      "probit": "3.92",
+      "percent": "14",
+    },
+    {
+      "probit": "3.96",
+      "percent": "15",
+    },
+    {
+      "probit": "4.01",
+      "percent": "16",
+    },
+    {
+      "probit": "4.05",
+      "percent": "17",
+    },
+    {
+      "probit": "4.08",
+      "percent": "18",
+    },
+    {
+      "probit": "4.12",
+      "percent": "19",
+    },
+    {
+      "probit": "4.16",
+      "percent": "20",
+    },
+    {
+      "probit": "4.19",
+      "percent": "21",
+    },
+    {
+      "probit": "4.23",
+      "percent": "22",
+    },
+    {
+      "probit": "4.26",
+      "percent": "23",
+    },
+    {
+      "probit": "4.29",
+      "percent": "24",
+    },
+    {
+      "probit": "4.33",
+      "percent": "25",
+    },
+    {
+      "probit": "4.36",
+      "percent": "26",
+    },
+    {
+      "probit": "4.39",
+      "percent": "27",
+    },
+    {
+      "probit": "4.42",
+      "percent": "28",
+    },
+    {
+      "probit": "4.45",
+      "percent": "29",
+    },
+    {
+      "probit": "4.48",
+      "percent": "30",
+    },
+    {
+      "probit": "4.5",
+      "percent": "31",
+    },
+    {
+      "probit": "4.53",
+      "percent": "32",
+    },
+    {
+      "probit": "4.56",
+      "percent": "33",
+    },
+    {
+      "probit": "4.59",
+      "percent": "34",
+    },
+    {
+      "probit": "4.61",
+      "percent": "35",
+    },
+    {
+      "probit": "4.64",
+      "percent": "36",
+    },
+    {
+      "probit": "4.67",
+      "percent": "37",
+    },
+    {
+      "probit": "4.69",
+      "percent": "38",
+    },
+    {
+      "probit": "4.72",
+      "percent": "39",
+    },
+    {
+      "probit": "4.75",
+      "percent": "40",
+    },
+    {
+      "probit": "4.77",
+      "percent": "41",
+    },
+    {
+      "probit": "4.8",
+      "percent": "42",
+    },
+    {
+      "probit": "4.82",
+      "percent": "43",
+    },
+    {
+      "probit": "4.85",
+      "percent": "44",
+    },
+    {
+      "probit": "4.87",
+      "percent": "45",
+    },
+    {
+      "probit": "4.9",
+      "percent": "46",
+    },
+    {
+      "probit": "4.92",
+      "percent": "47",
+    },
+    {
+      "probit": "4.95",
+      "percent": "48",
+    },
+    {
+      "probit": "4.97",
+      "percent": "49",
+    },
+    {
+      "probit": "5.00",
+      "percent": "50",
+    },
+    {
+      "probit": "5.03",
+      "percent": "51",
+    },
+    {
+      "probit": "5.05",
+      "percent": "52",
+    },
+    {
+      "probit": "5.08",
+      "percent": "53",
+    },
+    {
+      "probit": "5.10",
+      "percent": "54",
+    },
+    {
+      "probit": "5.13",
+      "percent": "55",
+    },
+    {
+      "probit": "5.15",
+      "percent": "56",
+    },
+    {
+      "probit": "5.18",
+      "percent": "57",
+    },
+    {
+      "probit": "5.20",
+      "percent": "58",
+    },
+    {
+      "probit": "5.23",
+      "percent": "59",
+    },
+    {
+      "probit": "5.25",
+      "percent": "60",
+    },
+    {
+      "probit": "5.28",
+      "percent": "61",
+    },
+    {
+      "probit": "5.31",
+      "percent": "62",
+    },
+    {
+      "probit": "5.33",
+      "percent": "63",
+    },
+    {
+      "probit": "5.36",
+      "percent": "64",
+    },
+    {
+      "probit": "5.39",
+      "percent": "65",
+    },
+    {
+      "probit": "5.41",
+      "percent": "66",
+    },
+    {
+      "probit": "5.44",
+      "percent": "67",
+    },
+    {
+      "probit": "5.47",
+      "percent": "68",
+    },
+    {
+      "probit": "5.5",
+      "percent": "69",
+    },
+    {
+      "probit": "5.52",
+      "percent": "70",
+    },
+    {
+      "probit": "5.55",
+      "percent": "71",
+    },
+    {
+      "probit": "5.58",
+      "percent": "72",
+    },
+    {
+      "probit": "5.61",
+      "percent": "73",
+    },
+    {
+      "probit": "5.64",
+      "percent": "74",
+    },
+    {
+      "probit": "5.67",
+      "percent": "75",
+    },
+    {
+      "probit": "5.71",
+      "percent": "76",
+    },
+    {
+      "probit": "5.74",
+      "percent": "77",
+    },
+    {
+      "probit": "5.77",
+      "percent": "78",
+    },
+    {
+      "probit": "5.81",
+      "percent": "79",
+    },
+    {
+      "probit": "5.84",
+      "percent": "80",
+    },
+    {
+      "probit": "5.88",
+      "percent": "81",
+    },
+    {
+      "probit": "5.92",
+      "percent": "82",
+    },
+    {
+      "probit": "5.95",
+      "percent": "83",
+    },
+    {
+      "probit": "5.99",
+      "percent": "84",
+    },
+    {
+      "probit": "6.04",
+      "percent": "85",
+    },
+    {
+      "probit": "6.08",
+      "percent": "86",
+    },
+    {
+      "probit": "6.13",
+      "percent": "87",
+    },
+    {
+      "probit": "6.18",
+      "percent": "88",
+    },
+    {
+      "probit": "6.23",
+      "percent": "89",
+    },
+    {
+      "probit": "6.28",
+      "percent": "90",
+    },
+    {
+      "probit": "6.34",
+      "percent": "91",
+    },
+    {
+      "probit": "6.41",
+      "percent": "92",
+    },
+    {
+      "probit": "6.48",
+      "percent": "93",
+    },
+    {
+      "probit": "6.55",
+      "percent": "94",
+    },
+    {
+      "probit": "6.64",
+      "percent": "95",
+    },
+    {
+      "probit": "6.75",
+      "percent": "96",
+    },
+    {
+      "probit": "6.88",
+      "percent": "97",
+    },
+    {
+      "probit": "7.05",
+      "percent": "98",
+    },
+    {
+      "probit": "7.33",
+      "percent": "99",
+    },
+    {
+      "probit": "7.37",
+      "percent": "99.1",
+    },
+    {
+      "probit": "7.41",
+      "percent": "99.2",
+    },
+    {
+      "probit": "7.46",
+      "percent": "99.3",
+    },
+    {
+      "probit": "7.51",
+      "percent": "99.4",
+    },
+    {
+      "probit": "7.58",
+      "percent": "99.5",
+    },
+    {
+      "probit": "7.65",
+      "percent": "99.6",
+    },
+    {
+      "probit": "7.75",
+      "percent": "99.7",
+    },
+    {
+      "probit": "7.88",
+      "percent": "99.8",
+    },
+    {
+      "probit": "8.09",
+      "percent": "99.9",
+    }
+]
