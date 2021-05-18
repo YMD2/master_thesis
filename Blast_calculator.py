@@ -12,7 +12,6 @@ atmospheric_pressure_default = 101250
 a = 340 #m/s
 P_a = 101325 #Pa
 path = os.getcwd()
-blast_strenght = 10
 
 def sorting(arr, var):
     pos = bisect.bisect_left(arr, var)
@@ -24,30 +23,28 @@ def sorting(arr, var):
     after = arr[pos]
     return [after, before]
 
-def energy(mass=None):
-    if mass==None:
-        mass=1
-    volume = mass/(0.08988*29.5)
+def energy(mass):
+    volume = mass*11.2*100/29.5
     return 3500000*volume
 
 def scaled_dist(dist=None):
     if dist==None:
-        n = 100/((P_a/energy())**(1/3))
-        distance = np.arange(1, n+1, 1, dtype=float)
-    scaled_distance_coeff = ((P_a/energy())**(1/3))
+        n = 100/((P_a/energy(mass))**(1/3))
+        dist = np.arange(1, n+1, 1, dtype=float)
+    scaled_distance_coeff = ((P_a/energy(mass))**(1/3))
     scaled_distance = np.multiply(dist, scaled_distance_coeff)
     return scaled_distance
 
 def overpressure(dist=None):
     P_file = json.load(
-        open(path + "\\overpressure\\{}.json".format(blast_strenght), 'r'))
+        open(path + "\\overpressure\\{}.json".format(blast_strength), 'r'))
     P_df = pd.DataFrame(P_file)
     P_arr = P_df.to_numpy()
     P_arr=P_arr.astype(np.float32)
 
     if dist == None:
         k = np.interp(scaled_dist(), P_arr[:, 0], P_arr[:, 1])
-        overpressure = np.multiply(k, 100)
+        overpressure = np.multiply(k, P_a)
     else:
         s = sorting(P_arr[:,0], dist)
         ar0 = P_arr[:, 0]
@@ -57,18 +54,17 @@ def overpressure(dist=None):
             ind=np.where(ar0 == i)
             v.append(ar1[ind])
         k = v[0] + (scaled_dist(dist)- s[0])* (v[1]-v[0])/(s[1]-s[0])
-        overpressure = np.multiply(k, 100)
+        overpressure = np.multiply(k, P_a)
     return overpressure
-
 
 def duration(dist=None):
     T_file = json.load(
-        open(path + "\\duration\\{}.json".format(blast_strenght), 'r'))
+        open(path + "\\duration\\{}.json".format(blast_strength), 'r'))
     T_df = pd.DataFrame(T_file)
     T_arr = T_df.to_numpy()
     T_arr = T_arr.astype(np.float32)
 
-    calc1 = ((energy()/P_a) ** (1/3)) * 1/a
+    calc1 = ((energy(mass)/P_a) ** (1/3)) * 1/a
     if dist == None:
         l = np.interp(scaled_dist(), T_arr[:, 0], T_arr[:, 1])
         positive_phase_duration = np.multiply(calc1, l)
@@ -88,18 +84,11 @@ def impulse(dist=None):
     impulse = np.multiply(0.5*overpressure(dist), duration(dist))
     return impulse
 
-def plotting():
-    fig, axs = plt.subplots(3, sharex = True, sharey = False)
-    axs[0].plot(scaled_dist(), overpressure(), '-')
-    axs[1].plot(scaled_dist(), duration(), '-')
-    axs[2].plot(scaled_dist(), impulse(), '-')
-    axs[0].set_title('side-on overpressure, kPa')
-    axs[1].set_title('positive phase duration, s')
-    axs[2].set_title('impulse, kPa*s')
-    axs[0].grid()
-    axs[1].grid()
-    axs[2].grid()
-    plt.show()
+def plotting(x, y, ax=None, plt_kwargs={}):
+    if ax is None:
+        ax = plt.gca()
+    ax.plot(x,y,**plt_kwargs)
+    return(ax)
     
 def probit_for_structure_damage(dist):
     sd = scaled_dist(dist)
@@ -124,46 +113,56 @@ def frag_velocity(dist):
     sd = scaled_dist(dist)
     ovp = overpressure(sd)
     P_r = 2*ovp + ((2.4*ovp**2)/(0.4*ovp)+2*1.4*P_a)
+    
     return P_r
 
 def percentage(probit):
-    pb_file = json.load(open(path + "probit.json", 'r'))
+    pb_file = json.load(open(path + "\\probit.json", 'r'))
     pb_df = pd.DataFrame(pb_file)
     pb_arr = pb_df.to_numpy()
     pb_arr = pb_arr.astype(np.float32)
     prb = np.interp(probit, pb_arr[:, 0], pb_arr[:, 1])
+    return prb
 
 if __name__ == '__main__':
     m = input("Enter mass of hydrogen: ")
     if m.isnumeric()==True:
         mass = int(m)
-    elif m == None:
-        mass = 1
     else:
-        print("Wrong input")
-        sys.exit(0)
+        print("Wrong input. Mass will be set as 1 kg by default")
+        mass = 1
+    blast_strength = input("Enter blast strength (from 1 to 10): ")
+    if blast_strength.isnumeric() == False and blast_strength > 10:
+        print("Wrong input. Blast strength will be set to 10 by default")
+        blast_strength = 10        
+    else:
+        pass
     d = input("Enter distance between wall and explosion center: ")
     if d.isnumeric() == True:
         dist = int(d)
-        pb1 = probit_for_structure_damage(dist)
-        pb2 = window_breakage(dist)
+        pb1 = round(percentage(float(probit_for_structure_damage(dist))), 3)
+        if pb1<=99.9:
+            print(f'The probability of damage to building itself is {pb1}%')
+        elif pb1>99.9:
+            print(f'The probability of damage to building itself is higher than 99.9%')
+        pb2 = round(percentage(float(window_breakage(dist))),3)
+        if pb1 <= 99.9:
+            print(f'The probability of windows breakage is {pb2}%')
+        elif pb1 > 99.9:
+            print(f'The probability of windows breakage is higher than 99.9%')
         pb3 = frag_velocity(dist)
-        #perc = 
-        print(pb1)
-        print(pb2)
+
         print(pb3)
-    elif d == None:
-        scaled_dist()
-        overpressure()
-        impulse()
-        plotting()
     else:
         print("Wrong input")
+        pass
+    pl=input("Are plots of overpressure and impulse necessary? y/n ")
+    if pl.lower == 'y':
+        x = scaled_dist()/((P_a/energy(mass))**(1/3))
+        plotting(x, overpressure()/1000, title='side-on overpressure, kPa')
+        plt.plot(x, duration(), title='positive phase duration, s')
+        plt.plot(x, impulse()/1000, title='impulse, kPa*s')
+        plt.grid()
+        plt.show()
+    elif pl.lower == 'n':
         sys.exit(0)
-    
-'''    parser = argparse.ArgumentParser(description='Process initial values')
-    parser.add_argument('-m', '--mass', type=int, metavar='Mass of hydrogen', default=1, help='Mass of hydrogen in stoichiometric hydrogen-air mixture')
-    parser.add_argument('-w', '--wall', type=int, metavar='Distance to obstacle', default=1,
-                        help='Distance between center of explosion and obstacle')
-    parser.add_argument('-p', '--plot', action='store_true', default=False,
-                        help='Plot blast parameters') '''
